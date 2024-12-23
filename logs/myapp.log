@@ -1,0 +1,720 @@
+2024-12-23 20:05:36 - Starting Application using Java 22.0.1 with PID 1356 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:05:36 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:05:38 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:05:38 - Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interface.
+2024-12-23 20:05:38 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:05:38 - Starting service [Tomcat]
+2024-12-23 20:05:38 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:05:39 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:05:39 - Root WebApplicationContext: initialization completed in 2135 ms
+2024-12-23 20:05:39 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+2024-12-23 20:05:39 - Stopping service [Tomcat]
+2024-12-23 20:05:39 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-23 20:05:39 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.wg.banking.Application.main(Application.java:13)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	... 10 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 33 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.util.Assert.state(Assert.java:101)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:175)
+	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 36 common frames omitted
+2024-12-23 20:13:17 - Starting Application using Java 22.0.1 with PID 17504 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:13:17 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:13:18 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:13:18 - Finished Spring Data repository scanning in 91 ms. Found 1 JPA repository interface.
+2024-12-23 20:13:19 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:13:19 - Starting service [Tomcat]
+2024-12-23 20:13:19 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:13:19 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:13:19 - Root WebApplicationContext: initialization completed in 1945 ms
+2024-12-23 20:13:19 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+2024-12-23 20:13:19 - Stopping service [Tomcat]
+2024-12-23 20:13:19 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-23 20:13:19 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.wg.banking.Application.main(Application.java:13)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	... 10 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 33 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
+	at org.springframework.util.Assert.state(Assert.java:101)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:175)
+	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 36 common frames omitted
+2024-12-23 20:16:45 - Starting Application using Java 22.0.1 with PID 21788 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:16:45 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:16:46 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:16:46 - Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interface.
+2024-12-23 20:16:47 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:16:47 - Starting service [Tomcat]
+2024-12-23 20:16:47 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:16:47 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:16:47 - Root WebApplicationContext: initialization completed in 2126 ms
+2024-12-23 20:16:47 - HikariPool-1 - Starting...
+2024-12-23 20:16:48 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@723742b2
+2024-12-23 20:16:48 - HikariPool-1 - Start completed.
+2024-12-23 20:16:48 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:16:48 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:16:48 - HHH000026: Second-level cache disabled
+2024-12-23 20:16:48 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:16:48 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:16:49 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:16:49 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:16:49 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'amazonS3Config': Injection of autowired dependencies failed
+2024-12-23 20:16:49 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:16:49 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:16:49 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:16:49 - Stopping service [Tomcat]
+2024-12-23 20:16:49 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-23 20:16:49 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'amazonS3Config': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1435)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.wg.banking.Application.main(Application.java:13)
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'aws.accessKey' in value "${aws.accessKey}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:416)
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:255)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:226)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:201)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:963)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1536)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1514)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 19 common frames omitted
+2024-12-23 20:22:39 - Starting Application using Java 22.0.1 with PID 2040 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:22:39 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:22:40 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:22:40 - Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interface.
+2024-12-23 20:22:41 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:22:41 - Starting service [Tomcat]
+2024-12-23 20:22:41 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:22:41 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:22:41 - Root WebApplicationContext: initialization completed in 2059 ms
+2024-12-23 20:22:42 - HikariPool-1 - Starting...
+2024-12-23 20:22:42 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e193ef5
+2024-12-23 20:22:42 - HikariPool-1 - Start completed.
+2024-12-23 20:22:42 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:22:42 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:22:42 - HHH000026: Second-level cache disabled
+2024-12-23 20:22:43 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:22:43 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:22:44 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:22:44 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:22:44 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'amazonS3Config': Injection of autowired dependencies failed
+2024-12-23 20:22:44 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:22:44 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:22:44 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:22:44 - Stopping service [Tomcat]
+2024-12-23 20:22:44 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-23 20:22:44 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'amazonS3Config': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1435)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.wg.banking.Application.main(Application.java:13)
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'aws.s3.region' in value "${aws.s3.region}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:416)
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:255)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:226)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:201)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:963)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1536)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1514)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 19 common frames omitted
+2024-12-23 20:23:49 - Starting Application using Java 22.0.1 with PID 21808 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:23:49 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:23:50 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:23:50 - Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interface.
+2024-12-23 20:23:51 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:23:51 - Starting service [Tomcat]
+2024-12-23 20:23:51 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:23:51 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:23:51 - Root WebApplicationContext: initialization completed in 2133 ms
+2024-12-23 20:23:52 - HikariPool-1 - Starting...
+2024-12-23 20:23:52 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@48499739
+2024-12-23 20:23:52 - HikariPool-1 - Start completed.
+2024-12-23 20:23:52 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:23:52 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:23:52 - HHH000026: Second-level cache disabled
+2024-12-23 20:23:53 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:23:53 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:23:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:23:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:23:55 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:23:56 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:23:56 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:23:56 - Started Application in 7.613 seconds (process running for 9.569)
+2024-12-23 20:24:46 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:24:46 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:24:46 - Completed initialization in 0 ms
+2024-12-23 20:24:46 - No mapping for GET /favicon.ico
+2024-12-23 20:24:46 - No endpoint GET /favicon.ico.
+2024-12-23 20:25:12 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:25:12 - Graceful shutdown complete
+2024-12-23 20:25:12 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:25:12 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:25:12 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:25:22 - Starting Application using Java 22.0.1 with PID 22388 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:25:22 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:25:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:25:23 - Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interface.
+2024-12-23 20:25:24 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:25:24 - Starting service [Tomcat]
+2024-12-23 20:25:24 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:25:25 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:25:25 - Root WebApplicationContext: initialization completed in 2643 ms
+2024-12-23 20:25:25 - HikariPool-1 - Starting...
+2024-12-23 20:25:26 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79ca7bea
+2024-12-23 20:25:26 - HikariPool-1 - Start completed.
+2024-12-23 20:25:26 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:25:26 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:25:26 - HHH000026: Second-level cache disabled
+2024-12-23 20:25:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:25:27 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:25:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:25:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:25:28 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:25:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:25:30 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:25:30 - Started Application in 9.112 seconds (process running for 11.229)
+2024-12-23 20:25:46 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:25:46 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:25:46 - Completed initialization in 1 ms
+2024-12-23 20:25:46 - No mapping for POST /api/auth/login
+2024-12-23 20:25:46 - No endpoint POST /api/auth/login.
+2024-12-23 20:25:48 - No mapping for POST /api/auth/login
+2024-12-23 20:25:48 - No endpoint POST /api/auth/login.
+2024-12-23 20:27:53 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:27:53 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:27:59 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:27:59 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:20 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:20 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:21 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:21 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:21 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:21 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:21 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:21 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:21 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:21 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:23 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:23 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:37:49 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:37:49 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:38:28 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:38:28 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:38:43 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:38:43 - Graceful shutdown complete
+2024-12-23 20:38:43 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:38:43 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:38:43 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:38:54 - Starting Application using Java 22.0.1 with PID 19636 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:38:54 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:38:55 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:38:55 - Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interface.
+2024-12-23 20:38:56 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:38:56 - Starting service [Tomcat]
+2024-12-23 20:38:56 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:38:56 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:38:56 - Root WebApplicationContext: initialization completed in 2210 ms
+2024-12-23 20:38:56 - HikariPool-1 - Starting...
+2024-12-23 20:38:56 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20256a0b
+2024-12-23 20:38:56 - HikariPool-1 - Start completed.
+2024-12-23 20:38:57 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:38:57 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:38:57 - HHH000026: Second-level cache disabled
+2024-12-23 20:38:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:38:57 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:38:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:38:58 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:38:59 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:39:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:39:00 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:39:00 - Started Application in 7.726 seconds (process running for 10.006)
+2024-12-23 20:40:11 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:40:11 - Graceful shutdown complete
+2024-12-23 20:40:11 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:40:11 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:40:11 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:40:22 - Starting Application using Java 22.0.1 with PID 5020 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:40:22 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:40:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:40:23 - Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interface.
+2024-12-23 20:40:24 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:40:24 - Starting service [Tomcat]
+2024-12-23 20:40:24 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:40:24 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:40:24 - Root WebApplicationContext: initialization completed in 2073 ms
+2024-12-23 20:40:24 - HikariPool-1 - Starting...
+2024-12-23 20:40:24 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20256a0b
+2024-12-23 20:40:24 - HikariPool-1 - Start completed.
+2024-12-23 20:40:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:40:25 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:40:25 - HHH000026: Second-level cache disabled
+2024-12-23 20:40:25 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:40:25 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:40:26 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:40:26 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:40:27 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:40:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:40:28 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:40:28 - Started Application in 7.233 seconds (process running for 9.264)
+2024-12-23 20:40:39 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:40:39 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:40:39 - Completed initialization in 0 ms
+2024-12-23 20:40:41 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:40:41 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:40:56 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:40:56 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:41:14 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:41:14 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:41:17 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:41:17 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:41:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:41:54 - Graceful shutdown complete
+2024-12-23 20:41:54 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:41:54 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:41:54 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:42:04 - Starting Application using Java 22.0.1 with PID 3112 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:42:04 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:42:05 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:42:05 - Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interface.
+2024-12-23 20:42:06 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:42:06 - Starting service [Tomcat]
+2024-12-23 20:42:06 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:42:06 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:42:06 - Root WebApplicationContext: initialization completed in 2101 ms
+2024-12-23 20:42:06 - HikariPool-1 - Starting...
+2024-12-23 20:42:07 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c9fdb64
+2024-12-23 20:42:07 - HikariPool-1 - Start completed.
+2024-12-23 20:42:07 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:42:07 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:42:07 - HHH000026: Second-level cache disabled
+2024-12-23 20:42:07 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:42:08 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:42:09 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:42:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:42:09 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:42:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:42:11 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:42:11 - Started Application in 7.458 seconds (process running for 9.426)
+2024-12-23 20:42:22 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:42:22 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:42:22 - Completed initialization in 1 ms
+2024-12-23 20:42:24 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:42:24 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:43:23 - No mapping for GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635
+2024-12-23 20:43:23 - No endpoint GET /pdf/db37bf87-63a8-400d-8fda-4638a5fb3635.
+2024-12-23 20:44:49 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:44:49 - Graceful shutdown complete
+2024-12-23 20:44:49 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:44:49 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:44:49 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:44:59 - Starting Application using Java 22.0.1 with PID 21180 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:44:59 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:45:00 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:45:00 - Finished Spring Data repository scanning in 97 ms. Found 1 JPA repository interface.
+2024-12-23 20:45:01 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:45:01 - Starting service [Tomcat]
+2024-12-23 20:45:01 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:45:01 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:45:01 - Root WebApplicationContext: initialization completed in 2109 ms
+2024-12-23 20:45:01 - HikariPool-1 - Starting...
+2024-12-23 20:45:02 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5627cb29
+2024-12-23 20:45:02 - HikariPool-1 - Start completed.
+2024-12-23 20:45:02 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:45:02 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:45:02 - HHH000026: Second-level cache disabled
+2024-12-23 20:45:03 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:45:03 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:45:04 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:45:04 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:45:04 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:45:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:45:06 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:45:06 - Started Application in 7.582 seconds (process running for 9.553)
+2024-12-23 20:45:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:45:11 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:45:11 - Completed initialization in 1 ms
+2024-12-23 20:45:14 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.wg.banking.model.Account.getAccountNumber()" because the return value of "com.wg.banking.model.Transaction.getTargetAccount()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.wg.banking.model.Account.getAccountNumber()" because the return value of "com.wg.banking.model.Transaction.getTargetAccount()" is null
+	at com.wg.banking.service.PdfService.generatePdfContent(PdfService.java:111)
+	at com.wg.banking.service.PdfService.generateAndUploadPdf(PdfService.java:40)
+	at com.wg.banking.controller.PdfController.getTransactionPdfUrl(PdfController.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2024-12-23 20:46:45 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:46:45 - Graceful shutdown complete
+2024-12-23 20:46:45 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:46:45 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:46:45 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:46:55 - Starting Application using Java 22.0.1 with PID 18628 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:46:55 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:46:56 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:46:56 - Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
+2024-12-23 20:46:57 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:46:57 - Starting service [Tomcat]
+2024-12-23 20:46:57 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:46:57 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:46:57 - Root WebApplicationContext: initialization completed in 1939 ms
+2024-12-23 20:46:57 - HikariPool-1 - Starting...
+2024-12-23 20:46:57 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e43f049
+2024-12-23 20:46:57 - HikariPool-1 - Start completed.
+2024-12-23 20:46:58 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:46:58 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:46:58 - HHH000026: Second-level cache disabled
+2024-12-23 20:46:58 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:46:58 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:46:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:46:59 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:47:00 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:47:01 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:47:01 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:47:01 - Started Application in 7.153 seconds (process running for 9.168)
+2024-12-23 20:47:05 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:47:05 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:47:05 - Completed initialization in 1 ms
+2024-12-23 20:47:06 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.wg.banking.model.Account.getAccountNumber()" because the return value of "com.wg.banking.model.Transaction.getTargetAccount()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.wg.banking.model.Account.getAccountNumber()" because the return value of "com.wg.banking.model.Transaction.getTargetAccount()" is null
+	at com.wg.banking.service.PdfService.generatePdfContent(PdfService.java:111)
+	at com.wg.banking.service.PdfService.generateAndUploadPdf(PdfService.java:40)
+	at com.wg.banking.controller.PdfController.getTransactionPdfUrl(PdfController.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2024-12-23 20:47:52 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 20:47:52 - Graceful shutdown complete
+2024-12-23 20:47:52 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:47:52 - HikariPool-1 - Shutdown initiated...
+2024-12-23 20:47:52 - HikariPool-1 - Shutdown completed.
+2024-12-23 20:48:01 - Starting Application using Java 22.0.1 with PID 16124 (C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service\target\classes started by pbhatt in C:\Users\pbhatt\OneDrive - WatchGuard Technologies Inc\Documents\project\bms-pdf-service)
+2024-12-23 20:48:01 - No active profile set, falling back to 1 default profile: "default"
+2024-12-23 20:48:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23 20:48:03 - Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interface.
+2024-12-23 20:48:03 - Tomcat initialized with port 8080 (http)
+2024-12-23 20:48:03 - Starting service [Tomcat]
+2024-12-23 20:48:03 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-23 20:48:04 - Initializing Spring embedded WebApplicationContext
+2024-12-23 20:48:04 - Root WebApplicationContext: initialization completed in 2025 ms
+2024-12-23 20:48:04 - HikariPool-1 - Starting...
+2024-12-23 20:48:04 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e43f049
+2024-12-23 20:48:04 - HikariPool-1 - Start completed.
+2024-12-23 20:48:04 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23 20:48:04 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-23 20:48:04 - HHH000026: Second-level cache disabled
+2024-12-23 20:48:05 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23 20:48:05 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.39
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-23 20:48:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23 20:48:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 20:48:06 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-23 20:48:07 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23 20:48:08 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-23 20:48:08 - Started Application in 7.231 seconds (process running for 9.418)
+2024-12-23 20:48:35 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-23 20:48:35 - Initializing Servlet 'dispatcherServlet'
+2024-12-23 20:48:35 - Completed initialization in 1 ms
+2024-12-23 20:48:38 - JAXB is unavailable. Will fallback to SDK implementation which may be less performant.If you are using Java 9+, you will need to include javax.xml.bind:jaxb-api as a dependency.
+2024-12-23 21:01:59 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-23 21:01:59 - Graceful shutdown complete
+2024-12-23 21:01:59 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23 21:01:59 - HikariPool-1 - Shutdown initiated...
+2024-12-23 21:01:59 - HikariPool-1 - Shutdown completed.
