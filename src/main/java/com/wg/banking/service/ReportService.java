@@ -11,19 +11,17 @@ import com.wg.banking.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
 @Service
-public class PdfService {
+public class ReportService {
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -58,6 +56,11 @@ public class PdfService {
         amazonS3Client.putObject(putObjectRequest);
 
         // Generate pre-signed URL (valid for 1 hour)
+        URL preSignedUrl = getPreSignedUrl(s3FilePath);
+        return preSignedUrl.toString();
+    }
+
+    private URL getPreSignedUrl(String s3FilePath) {
         Date expiration = new Date();
         long expTimeMillis = expiration.getTime();
         expTimeMillis += 1000 * 60 * 60; // 1 hour
@@ -69,7 +72,7 @@ public class PdfService {
                 expiration,
                 HttpMethod.GET
         );
-        return preSignedUrl.toString();
+        return preSignedUrl;
     }
 
     private ByteArrayOutputStream generatePdfContent(String accountId) throws DocumentException {
@@ -79,18 +82,18 @@ public class PdfService {
 
         document.open();
 
-        // Add header
+        // add header
         Font headerFont = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
         Paragraph header = new Paragraph("Transaction History", headerFont);
         header.setAlignment(Element.ALIGN_CENTER);
         document.add(header);
         document.add(Chunk.NEWLINE);
 
-        // Create table
+        // create table
         PdfPTable table = new PdfPTable(4);
         table.setWidthPercentage(100);
 
-        // Add table headers
+        // add table headers
         Stream.of("Timestamp", "Type", "Amount", "To")
                 .forEach(columnTitle -> {
                     PdfPCell header1 = new PdfPCell();
@@ -100,7 +103,7 @@ public class PdfService {
                     table.addCell(header1);
                 });
 
-        // Add transactions
+        // Add transactions.
         List<Transaction> transactions = transactionRepository.findAllByAccountId(accountId);
         for (Transaction transaction : transactions) {
             table.addCell(transaction.getCreatedAt().toString());
